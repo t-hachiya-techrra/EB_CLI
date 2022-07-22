@@ -1,0 +1,9 @@
+services:
+  eb:
+    build: .
+    volumes:
+      - ./app:/app
+      - ./.aws:/root/.aws
+      - ./.ssh:/root/.ssh
+      - ./startup.sh:/root/startup.sh
+    command: /bin/bash --init-file /root/startup.sh
